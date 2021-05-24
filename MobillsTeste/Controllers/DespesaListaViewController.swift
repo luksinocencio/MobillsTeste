@@ -14,6 +14,8 @@ class DespesaListaViewController: UIViewController {
     
     private var despesas = [Despesa]()
     
+    var despesaListener: ListenerRegistration!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -26,22 +28,18 @@ class DespesaListaViewController: UIViewController {
     func recuperarDespesas() {
         let db = Firestore.firestore()
         
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-        
-        db.collection(REF_DESPESA).document(userID).collection("despesas-\(userID)")
-            .order(by: "timestamp", descending: true)
-            .getDocuments(completion: { snapshot, error in
-            guard let snapshot = snapshot else {
-                debugPrint("Error ao carregar dados: \(String(describing: error))")
-                return
+        db.collection(REF_DESPESA).order(by: "timestamp", descending: true).getDocuments { snapshot, error in
+            if let error = error {
+                debugPrint(error.localizedDescription)
             }
             
             self.despesas.removeAll()
             self.despesas = Despesa.parseData(snapshot: snapshot)
             self.tableView.reloadData()
-        })
-        
+        }
     }
+    
+    
     
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "detalhesDespesaSegue", sender: self)
@@ -78,27 +76,24 @@ extension DespesaListaViewController: UITableViewDataSource {
         if editingStyle == .delete {
             
             let alert = UIAlertController(title: "Excluir", message: "Você quer excluir este item ?", preferredStyle: .actionSheet)
-            
+
             let deleteAction = UIAlertAction(title: "Excluir despesa", style: .default) { (action) in
+                let db = Firestore.firestore()
+                
+                db.collection("despesas").whereField("id", isEqualTo: self.despesas[indexPath.row].id).getDocuments { snapshot, error in
+                    if let error = error {
+                        print("Error getting documents: \(error)")
+                    } else {
+                        for document in snapshot!.documents {
+                            document.reference.delete()
+                        }
+                    }
+                }
+                
                 self.despesas.remove(at: indexPath.row)
                 self.tableView.deleteRows(at: [indexPath], with: .fade)
-                
-                let db = Firestore.firestore()
-                guard let userID = Auth.auth().currentUser?.uid else { return }
-                let idDelete = self.despesas[indexPath.row].id ?? ""
-                
-                print(idDelete)
-                
-                
-//                db.collection("despesas").document(userID).collection("despesas\(userID)").document(idDelete).delete { err in
-//                    if let err = err {
-//                        print("Error removing document: \(err)")
-//                    } else {
-//                        alert.dismiss(animated: true, completion: nil)
-//                    }
-//                }
             }
-            
+
             let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
             alert.addAction(deleteAction)
             alert.addAction(cancel)

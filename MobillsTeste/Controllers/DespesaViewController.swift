@@ -20,9 +20,10 @@ class DespesaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let despesa = despesa {
+            print(despesa)
             tfValor.text = String(despesa.valor)
             tfDescricao.text = despesa.descricao
-            swEstaPago.setOn(despesa.pago, animated: true)
+            swEstaPago.setOn(despesa.pago, animated: false)
         }
         
         setupView()
@@ -42,28 +43,37 @@ class DespesaViewController: UIViewController {
         let estaPago = swEstaPago.isOn
         
         if (despesa == nil) {
+            print("Aqui \(estaPago)")
             CadastrarDespesa.shared.cadastrar(valor: Double(valor)!, descricao: descricao, estaPago: estaPago)
         } else {
             let db = Firestore.firestore()
             
-            guard let userID = Auth.auth().currentUser?.uid else { return }
+            //            guard let userID = Auth.auth().currentUser?.uid else { return }
             
             let dict: [String : Any] = [
                 "valor": valor,
                 "descricao": descricao,
                 "estaPago": estaPago,
-                "data": Timestamp(date: Date())
             ]
             
-//            guard let id = despesa.id else { return }
-//            
-//            db.collection("despesas").document(userID).collection("despesas\(userID)").document().updateData(dict) { err in
-//                if let err = err {
-//                    print(err.localizedDescription)
-//                } else {
-//                    print("Atualizado")
-//                }
-//            }
+            db.collection("despesas").whereField("id", isEqualTo: despesa.id).getDocuments { snapshot, error in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                } else {
+                    for document in snapshot!.documents {
+                        document.reference.updateData(dict)
+                    }
+                }
+            }
+            
+            
+            //            db.collection("despesas").document().updateData(dict) { err in
+            //                if let err = err {
+            //                    print(err.localizedDescription)
+            //                } else {
+            //                    print("Atualizado")
+            //                }
+            //            }
         }
         
         

@@ -25,12 +25,13 @@ class CadastrarDespesa {
             "descricao": descricao,
             "estaPago": estaPago,
             "timestamp": Timestamp(date: Date()),
-            "userId": userId
+            "userId": userId,
+            "id": UUID().uuidString
         ]
         
+        let despesaRef = db.collection(REF_DESPESA)
         
-        db.collection("despesas").document(userId).collection("despesas-\(userId)")
-            .document().setData(dict) { err in
+        despesaRef.document().setData(dict) { err in
             if let err = err {
                 print("Error writing document: \(err)")
             } else {

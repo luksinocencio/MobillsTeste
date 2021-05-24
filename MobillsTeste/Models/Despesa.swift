@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 
 class Despesa {
-    var id: String?
+    var id: String
     var valor: Double
     var descricao: String
     var timestamp: Timestamp!
