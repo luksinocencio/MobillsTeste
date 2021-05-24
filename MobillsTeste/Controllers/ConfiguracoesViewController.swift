@@ -24,9 +24,12 @@ class ConfiguracoesViewController: UIViewController {
             print("Error while signing out!")
         }
         
+       
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let initial = storyboard.instantiateInitialViewController()
-        UIApplication.shared.keyWindow?.rootViewController = initial
+        if let keyWindow = UIWindow.key {
+            keyWindow.rootViewController = initial
+        }
     }
     
     

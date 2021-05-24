@@ -20,12 +20,28 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="NGU-R5-mgX">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="FeG-gc-TJY" detailTextLabel="WPs-Cx-AGe" style="IBUITableViewCellStyleSubtitle" id="NGU-R5-mgX">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NGU-R5-mgX" id="O1i-jW-NKP">
                                             <rect key="frame" x="0.0" y="0.0" width="384.5" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FeG-gc-TJY">
+                                                    <rect key="frame" x="20" y="6" width="25" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WPs-Cx-AGe">
+                                                    <rect key="frame" x="20" y="22.5" width="40.5" height="13.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -124,6 +140,7 @@
                             <constraint firstItem="6rZ-p8-FTI" firstAttribute="top" secondItem="7aZ-mA-NUN" secondAttribute="bottom" constant="10" id="5Bz-bz-h2t"/>
                             <constraint firstItem="rPl-7M-2xp" firstAttribute="leading" secondItem="wZS-jH-vbh" secondAttribute="leading" constant="20" id="KZs-jp-q9M"/>
                             <constraint firstItem="tFF-Rj-w7z" firstAttribute="top" secondItem="Alr-9D-IXp" secondAttribute="bottom" constant="20" id="LGi-Pl-iFG"/>
+                            <constraint firstItem="wZS-jH-vbh" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7aZ-mA-NUN" secondAttribute="trailing" symbolic="YES" id="Mh2-oI-oke"/>
                             <constraint firstItem="wZS-jH-vbh" firstAttribute="trailing" secondItem="Alr-9D-IXp" secondAttribute="trailing" constant="20" id="Mz3-bP-Dy3"/>
                             <constraint firstItem="WOU-uz-l9u" firstAttribute="top" secondItem="rPl-7M-2xp" secondAttribute="bottom" constant="20" id="P3p-7P-6Yk"/>
                             <constraint firstItem="wZS-jH-vbh" firstAttribute="trailing" secondItem="WOU-uz-l9u" secondAttribute="trailing" constant="20" id="ZWi-F6-s9v"/>
@@ -134,7 +151,9 @@
                             <constraint firstItem="Alr-9D-IXp" firstAttribute="top" secondItem="WOU-uz-l9u" secondAttribute="bottom" constant="10" id="jD6-pC-ejX"/>
                             <constraint firstItem="wZS-jH-vbh" firstAttribute="trailing" secondItem="6rZ-p8-FTI" secondAttribute="trailing" constant="20" id="qnU-XU-PKs"/>
                             <constraint firstItem="apZ-i5-3p9" firstAttribute="top" secondItem="6rZ-p8-FTI" secondAttribute="bottom" constant="30" id="rZg-Rc-odN"/>
+                            <constraint firstItem="WOU-uz-l9u" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wZS-jH-vbh" secondAttribute="leading" symbolic="YES" id="sgN-RS-8Ne"/>
                             <constraint firstItem="tFF-Rj-w7z" firstAttribute="leading" secondItem="wZS-jH-vbh" secondAttribute="leading" constant="20" id="tNw-k0-Y06"/>
+                            <constraint firstItem="wZS-jH-vbh" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="apZ-i5-3p9" secondAttribute="trailing" symbolic="YES" id="uXe-bB-iKt"/>
                             <constraint firstItem="7aZ-mA-NUN" firstAttribute="leading" secondItem="wZS-jH-vbh" secondAttribute="leading" constant="20" id="uzm-E8-1a9"/>
                         </constraints>
                     </view>
@@ -184,7 +203,7 @@
             </objects>
             <point key="canvasLocation" x="432" y="240"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--SignUp-->
         <scene sceneID="mDg-3i-5eF">
             <objects>
                 <viewController id="7Hm-k8-akn" customClass="SignUpViewController" customModule="MobillsTeste" customModuleProvider="target" sceneMemberID="viewController">
@@ -229,7 +248,7 @@
                             <constraint firstItem="nU2-oJ-JjQ" firstAttribute="centerX" secondItem="vxy-Dg-bnx" secondAttribute="centerX" id="vsU-kc-3is"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ZqD-dy-BIa"/>
+                    <navigationItem key="navigationItem" title="SignUp" id="ZqD-dy-BIa"/>
                     <connections>
                         <outlet property="tfEmail" destination="tax-pw-NhU" id="xow-lu-P9X"/>
                         <outlet property="tfName" destination="rly-ee-mAi" id="4bv-nl-E8O"/>
@@ -240,7 +259,7 @@
             </objects>
             <point key="canvasLocation" x="1342.0289855072465" y="-1979.4642857142856"/>
         </scene>
-        <!--Sign In View Controller-->
+        <!--SignIn-->
         <scene sceneID="dlD-as-15S">
             <objects>
                 <viewController id="cTp-0o-wm5" customClass="SignInViewController" customModule="MobillsTeste" customModuleProvider="target" sceneMemberID="viewController">
@@ -287,7 +306,9 @@
                             <constraint firstItem="yTz-7y-5FJ" firstAttribute="trailing" secondItem="wJp-Kg-z8R" secondAttribute="trailing" constant="20" id="lij-fl-Bcm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="eIE-Ud-9iM"/>
+                    <navigationItem key="navigationItem" title="SignIn" id="eIE-Ud-9iM">
+                        <barButtonItem key="backBarButtonItem" title=" " id="NcE-Uo-om7"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tfEmail" destination="Thm-j8-ebo" id="VAI-F0-hRC"/>
                         <outlet property="tfPassword" destination="U0t-QO-FpG" id="rLv-xw-V3l"/>

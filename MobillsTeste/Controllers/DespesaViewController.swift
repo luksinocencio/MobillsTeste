@@ -43,48 +43,35 @@ class DespesaViewController: UIViewController {
         let estaPago = swEstaPago.isOn
         
         if (despesa == nil) {
-            print("Aqui \(estaPago)")
             CadastrarDespesa.shared.cadastrar(valor: Double(valor)!, descricao: descricao, estaPago: estaPago)
         } else {
-            let db = Firestore.firestore()
-            
-            //            guard let userID = Auth.auth().currentUser?.uid else { return }
-            
             let dict: [String : Any] = [
-                "valor": valor,
+                "valor": Double(valor)!,
                 "descricao": descricao,
                 "estaPago": estaPago,
+                "timestampe": Timestamp(date: Date())
             ]
             
-            db.collection("despesas").whereField("id", isEqualTo: despesa.id).getDocuments { snapshot, error in
+            DB_REF_DESPESA.whereField("id", isEqualTo: despesa.id).getDocuments { snapshot, error in
                 if let error = error {
                     print("Error getting documents: \(error)")
                 } else {
                     for document in snapshot!.documents {
-                        document.reference.updateData(dict)
+                        document.reference.updateData(dict) { error in
+                            if let error = error {
+                                debugPrint(error.localizedDescription)
+                            } else {
+                                print("Deu certo")
+                            }
+                        }
                     }
                 }
             }
-            
-            
-            //            db.collection("despesas").document().updateData(dict) { err in
-            //                if let err = err {
-            //                    print(err.localizedDescription)
-            //                } else {
-            //                    print("Atualizado")
-            //                }
-            //            }
         }
-        
-        
         
         tfValor.text = ""
         tfDescricao.text = ""
         
         self.navigationController?.popViewController(animated: true)
     }
-    
 }
-
-
-// https://stackoverflow.com/questions/29782982/how-to-input-currency-format-on-a-text-field-from-right-to-left-using-swift

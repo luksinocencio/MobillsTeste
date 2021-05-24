@@ -42,7 +42,9 @@ class Despesa {
 
             let novaDespesa = Despesa(valor: valor, descricao: descricao, timestamp: timestamp, pago: pago, id: id, userId: userId)
             
-            despesas.append(novaDespesa)
+            if userId == Auth.auth().currentUser?.uid {
+                despesas.append(novaDespesa)
+            }
         }
         
         return despesas

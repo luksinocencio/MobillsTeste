@@ -8,5 +8,7 @@
 import Foundation
 import Firebase
 
-let USER_UID = Auth.auth().currentUser?.uid
+let db = Firestore.firestore()
 let REF_DESPESA = "despesas"
+
+let DB_REF_DESPESA = db.collection("despesas")

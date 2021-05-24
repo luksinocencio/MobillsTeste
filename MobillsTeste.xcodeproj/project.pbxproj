@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		CDD6E4BC2D139E1102B394BD /* Pods_MobillsTeste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E5472BA23174194E253DAF /* Pods_MobillsTeste.framework */; };
 		E834E9CC2658065E002FCB80 /* DespesaListaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E834E9CB2658065E002FCB80 /* DespesaListaViewController.swift */; };
-		E834E9CF26581085002FCB80 /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E834E9CE26581085002FCB80 /* CurrencyField.swift */; };
 		E834E9D626586055002FCB80 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E834E9D526586055002FCB80 /* Constants.swift */; };
 		E834E9D826586397002FCB80 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E834E9D726586397002FCB80 /* SignInViewController.swift */; };
 		E834E9DA265863A4002FCB80 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E834E9D9265863A4002FCB80 /* SignUpViewController.swift */; };
 		E834E9DC2658A959002FCB80 /* ConfiguracoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E834E9DB2658A959002FCB80 /* ConfiguracoesViewController.swift */; };
 		E88FC147265BB70700619068 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FC146265BB70700619068 /* Usuario.swift */; };
 		E88FC152265BD1B100619068 /* CriarDespesa.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FC151265BD1B100619068 /* CriarDespesa.swift */; };
+		E88FC155265C198400619068 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FC154265C198400619068 /* UIWindow+Extension.swift */; };
+		E88FC159265C2AAE00619068 /* FormatarDinheiro.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FC158265C2AAE00619068 /* FormatarDinheiro.swift */; };
 		E8FD35282657D30A00DA9B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FD35272657D30A00DA9B6E /* AppDelegate.swift */; };
 		E8FD352A2657D30A00DA9B6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FD35292657D30A00DA9B6E /* SceneDelegate.swift */; };
 		E8FD352F2657D30A00DA9B6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8FD352D2657D30A00DA9B6E /* Main.storyboard */; };
@@ -30,13 +31,14 @@
 		5D1D527761B3C902A031CDB6 /* Pods-MobillsTeste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobillsTeste.debug.xcconfig"; path = "Target Support Files/Pods-MobillsTeste/Pods-MobillsTeste.debug.xcconfig"; sourceTree = "<group>"; };
 		95E5472BA23174194E253DAF /* Pods_MobillsTeste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobillsTeste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E834E9CB2658065E002FCB80 /* DespesaListaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DespesaListaViewController.swift; sourceTree = "<group>"; };
-		E834E9CE26581085002FCB80 /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
 		E834E9D526586055002FCB80 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E834E9D726586397002FCB80 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E834E9D9265863A4002FCB80 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E834E9DB2658A959002FCB80 /* ConfiguracoesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracoesViewController.swift; sourceTree = "<group>"; };
 		E88FC146265BB70700619068 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		E88FC151265BD1B100619068 /* CriarDespesa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriarDespesa.swift; sourceTree = "<group>"; };
+		E88FC154265C198400619068 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
+		E88FC158265C2AAE00619068 /* FormatarDinheiro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatarDinheiro.swift; sourceTree = "<group>"; };
 		E8FD35242657D30A00DA9B6E /* MobillsTeste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobillsTeste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8FD35272657D30A00DA9B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8FD35292657D30A00DA9B6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +84,6 @@
 		E834E9CD26580945002FCB80 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				E834E9CE26581085002FCB80 /* CurrencyField.swift */,
 				E834E9D526586055002FCB80 /* Constants.swift */,
 			);
 			path = Utils;
@@ -94,6 +95,15 @@
 				E88FC151265BD1B100619068 /* CriarDespesa.swift */,
 			);
 			path = Despesas;
+			sourceTree = "<group>";
+		};
+		E88FC153265C196600619068 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E88FC154265C198400619068 /* UIWindow+Extension.swift */,
+				E88FC158265C2AAE00619068 /* FormatarDinheiro.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E8FD351B2657D30A00DA9B6E = {
@@ -117,6 +127,7 @@
 		E8FD35262657D30A00DA9B6E /* MobillsTeste */ = {
 			isa = PBXGroup;
 			children = (
+				E88FC153265C196600619068 /* Extensions */,
 				E834E9CD26580945002FCB80 /* Utils */,
 				E8FD353E2657D40700DA9B6E /* Controllers */,
 				E8FD353B2657D32400DA9B6E /* Models */,
@@ -293,11 +304,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E834E9DA265863A4002FCB80 /* SignUpViewController.swift in Sources */,
+				E88FC159265C2AAE00619068 /* FormatarDinheiro.swift in Sources */,
 				E8FD35472657DD6100DA9B6E /* DespesaViewController.swift in Sources */,
 				E8FD353D2657D33400DA9B6E /* Despesa.swift in Sources */,
 				E88FC152265BD1B100619068 /* CriarDespesa.swift in Sources */,
 				E8FD35282657D30A00DA9B6E /* AppDelegate.swift in Sources */,
-				E834E9CF26581085002FCB80 /* CurrencyField.swift in Sources */,
+				E88FC155265C198400619068 /* UIWindow+Extension.swift in Sources */,
 				E8FD352A2657D30A00DA9B6E /* SceneDelegate.swift in Sources */,
 				E834E9D626586055002FCB80 /* Constants.swift in Sources */,
 				E88FC147265BB70700619068 /* Usuario.swift in Sources */,

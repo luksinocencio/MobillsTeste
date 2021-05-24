@@ -14,15 +14,11 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func createAccountTapped(_ sender: UIButton) {
-        
         guard let nome = tfName.text, tfName.text != "" else { return }
         guard let email = tfEmail.text, tfEmail.text != "" else { return }
         guard let senha = tfPassword.text, tfPassword.text != "" else { return }
@@ -37,7 +33,7 @@ class SignUpViewController: UIViewController {
             let data: [String: Any] = [
                 "id": uid,
                 "nome": nome,
-                "cadastrado": FieldValue.serverTimestamp(),
+                "cadastrado": Timestamp(date: Date()),
                 "email": email
             ]
             

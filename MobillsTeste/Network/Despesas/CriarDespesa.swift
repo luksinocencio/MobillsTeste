@@ -16,8 +16,6 @@ class CadastrarDespesa {
     
     func cadastrar(valor: Double, descricao: String, estaPago: Bool) {
         
-        let db = Firestore.firestore()
-
         guard let userId = Auth.auth().currentUser?.uid else { return }
         
         let dict: [String : Any] = [
@@ -29,9 +27,7 @@ class CadastrarDespesa {
             "id": UUID().uuidString
         ]
         
-        let despesaRef = db.collection(REF_DESPESA)
-        
-        despesaRef.document().setData(dict) { err in
+        DB_REF_DESPESA.document().setData(dict) { err in
             if let err = err {
                 print("Error writing document: \(err)")
             } else {
